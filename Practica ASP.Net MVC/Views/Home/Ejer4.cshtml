@@ -1,0 +1,18 @@
+﻿@model Practica_ASP.Net_MVC.Models.suma1_100
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Suma de los números del 1 al 100</h1>
+
+   
+    @using (Html.BeginForm("Ejer4", "Home", FormMethod.Post))
+    {
+            <input type="submit" value="Calcular suma" />
+    }
+   
+    <h2>Resultado de la suma:</h2>
+    @Html.DisplayFor(x => x.result)
+</div>

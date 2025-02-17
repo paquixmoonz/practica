@@ -1,0 +1,40 @@
+﻿@model Practica_ASP.Net_MVC.Models.ordenarNumeros
+
+@{
+    ViewData["Title"] = "Ordenar Números";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Ordenar Tres Números</h1>
+
+    
+    @using (Html.BeginForm("Ejer7", "Home", FormMethod.Post))
+    {
+            <label for="Num1">Número 1:</label>
+        @Html.TextBoxFor(m => m.num1)
+            <br />
+
+        <br />
+
+            <label for="Num2">Número 2:</label>
+        @Html.TextBoxFor(m => m.num2)
+            <br />
+
+        <br />
+
+            <label for="Num3">Número 3:</label>
+        @Html.TextBoxFor(m => m.num3)
+            <br />
+
+        <br />
+
+            <input type="submit" value="Ordenar Números" />
+    }
+
+  
+    @if (!string.IsNullOrEmpty(Model.result))
+    {
+            <h2>@Model.result</h2>
+    }
+</div>
+

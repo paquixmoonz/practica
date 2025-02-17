@@ -1,0 +1,29 @@
+﻿@model Practica_ASP.Net_MVC.Models.negativo
+
+@{
+    ViewData["Title"] = "Verificar si el número es negativo";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Verificación de número</h1>
+
+  
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+            <label for="Num">Ingresa un número:</label>
+        @Html.TextBoxFor(x => x.num) 
+
+            <br />
+
+        <br />
+
+            <input type="submit" value="Verificar" />
+    }
+
+    
+    @if (!string.IsNullOrEmpty(Model.result))
+    {
+            <h2>@Model.result</h2> 
+    }
+</div>
+

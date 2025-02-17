@@ -1,0 +1,33 @@
+﻿@model Practica_ASP.Net_MVC.Models.potencia
+
+@{
+    ViewData["Title"] = "Calcular Potencia";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cálculo de Potencia</h1>
+
+    @using (Html.BeginForm("Ejer12", "Home", FormMethod.Post))
+    {
+            <label for="BaseX">Introduce la base (X):</label>
+        @Html.TextBoxFor(m => m.baseX) 
+
+            <br />
+
+        <br />
+
+            <label for="PotenciaN">Introduce la potencia (N):</label>
+        @Html.TextBoxFor(m => m.potenciaN) 
+
+            <br />
+
+        <br />
+
+            <input type="submit" value="Calcular" />
+    }
+
+    @if (Model.result != 0)
+    {
+            <h2>@Model.baseX elevado a @Model.potenciaN es igual a @Model.result</h2>
+    }
+</div>

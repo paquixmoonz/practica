@@ -1,0 +1,28 @@
+﻿@model Practica_ASP.Net_MVC.Models.digitos
+
+@{
+    ViewData["Title"] = "Contar Dígitos";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Contar Dígitos de un Número</h1>
+
+    @using (Html.BeginForm("Ejer8", "Home", FormMethod.Post))
+    {
+            <label for="Num">Ingresa un número:</label>
+        @Html.TextBoxFor(m => m.num) 
+
+            <br />
+
+        <br />
+
+            <input type="submit" value="Contar Dígitos" />
+    }
+
+   
+    @if (Model.result > 0)
+    {
+            <h2>El número @Model.num tiene @Model.result dígitos.</h2>
+    }
+</div>
+
